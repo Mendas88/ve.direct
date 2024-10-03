@@ -1,0 +1,10 @@
+# Command line sensor for Home Assistant.
+
+command_line:
+  - sensor:
+      name: Battery
+      unique_id: your_optional_id_goes_here_for_gui_interaction
+      command: "bash vedirect --raw --device=/dev/serial/by-id/usb-YOUR_DEVICE_HERE-port0"
+      unit_of_measurement: "%"
+      scan_interval: 60  # Time in seconds between updates
+      value_template: "{{ value }}"
